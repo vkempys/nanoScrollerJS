@@ -472,7 +472,7 @@
       }
       if (!this.iOSNativeScrolling) {
         this.maxSliderTop = this.paneHeight - this.sliderHeight;
-        this.sliderTop = this.maxScrollTop <= 0 ? 0 : this.contentScrollTop * this.maxSliderTop / this.maxScrollTop;
+        this.sliderTop = this.maxScrollTop === 0 ? this.maxScrollTop : Math.max(this.contentScrollTop * this.maxSliderTop / this.maxScrollTop, 0);
       }
     };
 
